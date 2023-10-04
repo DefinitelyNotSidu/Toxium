@@ -7,6 +7,10 @@ public class Main extends JavaPlugin {
     public void onEnable() {
 
     }
+    @Override
+    public void onDisable() {
+
+    }
 
 
 
