@@ -1,0 +1,7 @@
+main: me.DefinitelyNotSidu.Toxium.Main
+name: Toxium
+version: 0.1
+authors:
+  - DefinitelyNotSidu
+  - D4nte111
+api-version: 1.20

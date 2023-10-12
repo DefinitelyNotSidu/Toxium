@@ -1,39 +1,65 @@
 package me.DefinitelyNotSidu.Toxium.Items;
 
 
+
+import me.DefinitelyNotSidu.Toxium.Main;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
+import org.bukkit.attribute.Attribute;
+import org.bukkit.attribute.AttributeModifier;
+import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.plugin.java.JavaPlugin;
+
+import java.util.UUID;
 
 
-public class ToxiumSword extends JavaPlugin {
+public class ToxiumSword  {
+        private final Main plugin;
+        ItemStack sword;
 
-    public static ShapedRecipe sword() {
-        ItemStack sword = new ItemStack(Material.NETHERITE_SWORD);
-        ItemMeta meta = sword.getItemMeta();
+        public ToxiumSword(Main plugin) {
+                this.plugin = plugin;
+                setupSword();
+        }
 
-        meta.setCustomModelData(6);
-        meta.setDisplayName(ChatColor.RESET + "" + ChatColor.GREEN + "Toxium Sword");
-        //TODO: damage
-        sword.setItemMeta(meta);
+        private void setupSword() {
+                sword = new ItemStack(Material.NETHERITE_SWORD);
 
-        NamespacedKey key = new NamespacedKey(this, "toxium_sword");
-        //to sie pierdoli, jak wrócę to zobaczę jak to obejść XD
-
-        ShapedRecipe recipe = new ShapedRecipe(key, sword);
-
-        recipe.shape(" I ", " I ", " S ");
-        recipe.setIngredient('I', Material.IRON_INGOT);
-        recipe.setIngredient('S', Material.STICK);
+                ItemMeta meta = sword.getItemMeta();
+                assert meta != null;
+                meta.setDisplayName(ChatColor.RESET + "" + ChatColor.GREEN + "Toxium Sword");
+                meta.setCustomModelData(21371);
 
 
+                /*
+                ponizej rozpoczyna sie cos co moze sie jebac - obrazenia xD
+                 */
 
-        return recipe;
-    }
+                /*
+                RECKA
+                 */
+                NamespacedKey key = new NamespacedKey(plugin, "toxium_sword");
+                ShapedRecipe recipe = new ShapedRecipe(key, sword);
+
+                recipe.shape(" T ", " T ", " R ");
+
+                recipe.setIngredient('T', Material.DIAMOND_BLOCK);
+                recipe.setIngredient('R', Material.STICK);
+
+                plugin.getServer().addRecipe(recipe);
+
+        }
+        public ItemStack getSword() { return sword; }
+
+
+
+
+
+
+
 
 
 }

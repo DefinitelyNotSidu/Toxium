@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Toxium:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Toxium_jar</output-path>
+    <root id="archive" name="Toxium.jar">
+      <element id="module-output" name="Toxium" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../build tools mc 1.20.2/Spigot/Spigot-API/target/spigot-api-1.20.2-R0.1-SNAPSHOT-shaded.jar" path-in-jar="/" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/me/DefinitelyNotSidu/Toxium/plugin.yml" />
+    </root>
+  </artifact>
+</component>
